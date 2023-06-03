@@ -15,10 +15,12 @@ export default function Home() {
             {"Hi, my name is Sam!"}
           </span>
           <Image
-            src="/images/home.svg"
+            src="/images/home.jpg"
             alt="Samuel Sendzul"
             width={283}
             height={536}
+            unoptimized={true}
+            quality={100}
           />
         </div>
         <div className="flex flex-col gap-4 w-[280px] sm:w-[400px] text-justify text-lg sm:text-xl text-neutral-2 my-2">
