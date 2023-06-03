@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import NavBar from "@/components/NavBar";
@@ -14,12 +15,11 @@ export default function Home() {
           <span className="text-3xl sm:text-3xl text-neutral-2 font-semi">
             {"Hi, my name is Sam!"}
           </span>
-          <Image
+          <img
             src="/images/home.svg"
             alt="Samuel Sendzul"
             width={283}
             height={536}
-            unoptimized
           />
         </div>
         <div className="flex flex-col gap-4 w-[280px] sm:w-[400px] text-justify text-lg sm:text-xl text-neutral-2 my-5">
