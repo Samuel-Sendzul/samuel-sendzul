@@ -21,7 +21,7 @@ export default function Home() {
             height={536}
           />
         </div>
-        <div className="flex flex-col gap-4 w-[280px] sm:w-[400px] text-justify text-lg sm:text-xl text-neutral-2 my-5">
+        <div className="flex flex-col gap-4 w-[280px] sm:w-[400px] text-justify text-lg sm:text-xl text-neutral-2 my-2">
           <span className="text-2xl text-center sm:text-start text-neutral-2 font-semi">
             {"Welcome to my website."}
           </span>
