@@ -30,7 +30,7 @@ export default function NavBar() {
       <Link href="/" className="text-xl text-neutral-2 font-semi">
         samuelsendzul
       </Link>
-      <div className="sm:hidden">
+      <div className="sm:hidden" ref={dropdownRef}>
         <button className="text-white" onClick={toggleDropdown}>
           <svg
             className="w-6 h-6"
@@ -62,10 +62,7 @@ export default function NavBar() {
         <span className="hover:text-neutral-2">es</span>
       </div>
       {isDropdownOpen && (
-        <div
-          ref={dropdownRef}
-          className="sm:hidden flex flex-col gap-2 absolute top-0 right-0 mt-12 mr-4 p-4 bg-neutral--9 rounded-md shadow-lg text-neutral-2 font-semi"
-        >
+        <div className="sm:hidden flex flex-col gap-2 absolute top-0 right-0 mt-12 mr-4 p-4 bg-neutral--9 rounded-md shadow-lg text-neutral-2 font-semi">
           <Link href="/" className="hover:text-neutral-2">
             about
           </Link>

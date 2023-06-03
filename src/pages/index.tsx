@@ -19,6 +19,7 @@ export default function Home() {
             alt="Samuel Sendzul"
             width={283}
             height={536}
+            unoptimized
           />
         </div>
         <div className="flex flex-col gap-4 w-[280px] sm:w-[400px] text-justify text-lg sm:text-xl text-neutral-2 my-5">
