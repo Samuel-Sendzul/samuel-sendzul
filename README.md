@@ -1,9 +1,9 @@
-# Personal Website for Samuel Sendzul
+# Hi, my name is Sam!
 
-## Getting Started
+## Welcome to my GitHub.
 
-First, run the development server:
+I'm a full stack software developer and entrepreneur.
 
-```bash
-npm run dev
-```
+Here, you'll find a collection of my coding projects, writing about the businesses I’ve started, and some personal reflections.
+
+I hope you enjoy and feel free to let me know what you think!
