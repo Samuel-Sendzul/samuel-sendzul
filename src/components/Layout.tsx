@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 type LayoutProps = {
   children?: ReactNode;
@@ -13,6 +14,7 @@ export default function Layout({ children }: LayoutProps) {
     <main className={`${inter.className}`}>
       <NavBar />
       {children}
+      <Footer />
     </main>
   );
 }
