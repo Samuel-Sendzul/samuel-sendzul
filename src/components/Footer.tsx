@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="flex flex-row justify-center md:justify-end items-center p-8">
+    <div className="md:fixed bottom-0 left-0 w-full flex flex-row justify-center md:justify-end items-center p-8">
       <div className="flex flex-row gap-2">
         <Link
           href={"https://www.linkedin.com/in/samuel-sendzul/"}
