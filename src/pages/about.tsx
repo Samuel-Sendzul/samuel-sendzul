@@ -2,6 +2,7 @@ import AboutItem from "@/components/AboutItem";
 import ImageSliderGrid from "@/components/ImageSliderGrid";
 import { SliderImage } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
 const images: Array<SliderImage> = [
   {
@@ -55,15 +56,26 @@ export default function About() {
           <span>A bit about me</span>
         </div>
         <div className="flex flex-col gap-6">
-          <AboutItem>
-            <Image
-              src="/images/stitch.svg"
-              width={40}
-              height={30}
-              alt="stitch"
-            />
-            <span>Full stack engineer at Stitch Money</span>
-          </AboutItem>
+          <Link
+            href={"https://stitch.money"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <AboutItem>
+              <Image
+                src="/images/stitch.svg"
+                width={40}
+                height={30}
+                alt="stitch"
+              />
+              <div>
+                <span>{"Full stack engineer at "}</span>
+                <span className="text-decoration-line: underline">
+                  {"Stitch Money"}
+                </span>
+              </div>
+            </AboutItem>
+          </Link>
           <AboutItem>
             <Image
               src="/images/climber.svg"
