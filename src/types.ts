@@ -3,3 +3,9 @@ export type SliderImage = {
   src: string;
   alt: string;
 };
+
+export type IconLink = {
+  href: string;
+  src: string;
+  alt: string;
+};

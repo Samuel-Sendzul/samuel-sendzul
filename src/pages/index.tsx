@@ -39,7 +39,10 @@ export default function Home() {
         </span>
         <div>
           <span>{"I hope you enjoy and feel free to "}</span>
-          <Link href="/" className="text-decoration-line: underline">
+          <Link
+            href="mailto:samuel.sendzul@gmail.com"
+            className="text-decoration-line: underline"
+          >
             {"let me know what you think!"}
           </Link>
         </div>

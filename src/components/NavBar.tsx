@@ -58,7 +58,7 @@ export default function NavBar() {
           about
         </Link>
         <Link
-          href="/"
+          href="/code"
           className={`hover:text-neutral-2 ${
             router.pathname === "/code" ? "text-neutral-2" : "text-neutral-1"
           }`}
@@ -98,7 +98,7 @@ export default function NavBar() {
             code
           </Link>
           <Link
-            href="/"
+            href="/code"
             className={`hover:text-neutral-2 ${
               router.pathname === "/writing"
                 ? "text-neutral-2"
