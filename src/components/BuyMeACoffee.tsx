@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 export default function BuyMeACoffee() {
   const isMobile = useMediaQuery({ query: `(max-width: 820px)` });
   function handleClick() {
-    window.open("https://wigwag.me/samuel", "_blank");
+    window.open("https://bigbag.money/samuel", "_blank");
   }
   return (
     <button
