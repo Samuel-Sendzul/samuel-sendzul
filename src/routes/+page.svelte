@@ -7,10 +7,7 @@
 		<div class="flex flex-col gap-4 px-8 text-xl md:w-2/5 md:text-2xl">
 			<span class="font-semibold">Welcome to my website.</span>
 			<span>I'm a full stack software engineer and entrepreneur.</span>
-			<span
-				>Here, you'll find a collection of my coding projects, writing about the businesses I've
-				started, and some personal reflections.</span
-			>
+			<span>Here, you'll a collection of my software projects.</span>
 			<span
 				>I hope you enjoy and feel free to <a
 					href="/contact"
