@@ -58,6 +58,7 @@ src/
 | Change page layout / breakpoints      | `src/App.module.css`                                            |
 | Change PDF layout                     | `src/pdf/CvDocument.tsx`                                        |
 | Change download UX                    | `src/components/ui/DownloadCvButton.tsx`                        |
+| Change LLM plain-text CV              | `src/data/llmTxt.ts`, then `pnpm llm-txt`                       |
 
 ## Commands
 
@@ -66,6 +67,7 @@ pnpm install
 pnpm dev      # Vite dev server
 pnpm build    # tsc -b && vite build
 pnpm lint     # oxlint
+pnpm llm-txt  # Regenerate public/llm.txt from cv data
 ```
 
 ## Verify before finishing

@@ -7,6 +7,7 @@ import { SelectedWork } from './components/cv/SelectedWork'
 import { Experience } from './components/cv/RoleCard'
 import { ToolStack } from './components/cv/ToolStack'
 import { Education } from './components/cv/Education'
+import { CopyLlmTxtButton } from './components/ui/CopyLlmTxtButton'
 import { DownloadCvButton } from './components/ui/DownloadCvButton'
 import { TextSizeControl } from './components/ui/TextSizeControl'
 import { ThemeToggle } from './components/ui/ThemeToggle'
@@ -32,6 +33,7 @@ function App() {
               <TextSizeControl />
               <ThemeToggle />
               <DownloadCvButton />
+              <CopyLlmTxtButton />
             </div>
             <aside className={styles.sidebar} aria-label="Tool stack">
               <ToolStack groups={cv.toolStack} />
