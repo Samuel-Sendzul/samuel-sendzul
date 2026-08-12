@@ -128,7 +128,7 @@ export function CvDocument({ data }: CvDocumentProps) {
         <Text style={styles.name}>{profile.name}</Text>
         <Text style={styles.tagline}>{profile.tagline}</Text>
         <Text style={styles.contact}>
-          {profile.email} · {profile.phone} ·{' '}
+          {profile.email} ·{' '}
           <Link src={profile.github} style={styles.link}>
             GitHub
           </Link>{' '}

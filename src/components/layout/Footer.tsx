@@ -17,13 +17,6 @@ export function Footer({ profile }: FooterProps) {
         </a>
         <a
           className={styles.link}
-          href={`tel:${profile.phone.replace(/\s/g, '')}`}
-        >
-          <Icon name="phone" />
-          <span>{profile.phone}</span>
-        </a>
-        <a
-          className={styles.link}
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"

@@ -22,13 +22,6 @@ export function Header({ profile }: HeaderProps) {
           </a>
           <a
             className={styles.link}
-            href={`tel:${profile.phone.replace(/\s/g, '')}`}
-          >
-            <Icon name="phone" />
-            <span>{profile.phone}</span>
-          </a>
-          <a
-            className={styles.link}
             href={profile.github}
             target="_blank"
             rel="noreferrer"

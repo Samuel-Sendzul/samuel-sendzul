@@ -52,7 +52,6 @@ export type Profile = {
   name: string
   tagline: string
   email: string
-  phone: string
   github: string
   linkedin: string
 }
@@ -73,7 +72,6 @@ export const cv: CvData = {
     name: 'Samuel Sendzul',
     tagline: 'Product focused software engineer',
     email: 'samuel.sendzul@gmail.com',
-    phone: '+27 82 622 9622',
     github: 'https://github.com/Samuel-Sendzul',
     linkedin: 'https://www.linkedin.com/in/samuel-sendzul/',
   },
