@@ -10,7 +10,6 @@ export function formatLlmTxt(data: CvData = cv): string {
     `> ${profile.tagline}`,
     '',
     `- Email: ${profile.email}`,
-    `- Phone: ${profile.phone}`,
     `- GitHub: ${profile.github}`,
     `- LinkedIn: ${profile.linkedin}`,
     '',
