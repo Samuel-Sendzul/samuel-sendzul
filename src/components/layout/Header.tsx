@@ -11,9 +11,6 @@ export function Header({ profile }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.identity}>
         <h1 className={styles.name}>{profile.name}</h1>
-        {profile.location ? (
-          <p className={styles.location}>{profile.location}</p>
-        ) : null}
       </div>
 
       <div className={styles.meta}>
