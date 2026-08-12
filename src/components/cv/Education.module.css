@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.credential {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.awards {
+  font-size: 0.9375rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  max-width: var(--measure);
+}

@@ -4,7 +4,40 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef1f4" />
+    <meta
+      name="description"
+      content="Samuel Sendzul — product focused software engineer. CV and selected work."
+    />
     <title>Samuel Sendzul</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('sendzul-theme')
+          var theme =
+            stored === 'dark' || stored === 'light'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light'
+          document.documentElement.dataset.theme = theme
+          var scale = Number(localStorage.getItem('sendzul-text-scale'))
+          if (scale === 1 || scale === 1.0625 || scale === 1.1875) {
+            document.documentElement.style.setProperty(
+              '--text-scale',
+              String(scale),
+            )
+          }
+          var meta = document.querySelector('meta[name="theme-color"]')
+          if (meta) {
+            meta.setAttribute(
+              'content',
+              theme === 'dark' ? '#12151a' : '#eef1f4',
+            )
+          }
+        } catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

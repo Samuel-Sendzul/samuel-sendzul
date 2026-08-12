@@ -1,32 +1,30 @@
-# React + TypeScript + Vite
+# Samuel Sendzul
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal CV site: a product-focused software engineer homepage with light/dark
+theme and a client-generated PDF download.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite 8 + TypeScript
+- CSS Modules (one per component)
+- `@react-pdf/renderer` for selectable PDF generation
+- oxlint
 
-## React Compiler
+## Commands
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+pnpm install
+pnpm dev
+pnpm build
+pnpm lint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Content
+
+All copy lives in [`src/data/cv.ts`](src/data/cv.ts). The web page and PDF both
+render from that module. Edit there, not in components.
+
+## Theme
+
+Theme preference is stored in `localStorage` under `sendzul-theme`. On first
+visit the site follows `prefers-color-scheme`. Toggle is in the header.
