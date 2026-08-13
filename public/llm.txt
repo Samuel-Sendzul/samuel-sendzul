@@ -1,0 +1,83 @@
+# Samuel Sendzul
+
+> Product focused software engineer
+
+- Email: samuel.sendzul@gmail.com
+- GitHub: https://github.com/Samuel-Sendzul/samuel-sendzul
+- LinkedIn: https://www.linkedin.com/in/samuel-sendzul/
+
+## About
+
+Hi, I'm Sam, a software developer working across AI products, fintech, and blockchain. I've built an [OCR pipeline](https://www.linkedin.com/pulse/how-i-built-support-any-kind-pdf-week-samuel-sendzul-srjvf/) that processes thousands of PDFs a week and overhauled a [mobile app](https://www.getrecall.ai) currently serving 17,000+ monthly users. I've also worked on scalable payment processing systems, crypto trading algorithms, and a [crypto acceptance product](https://stitch.money/payment-methods/pay-with-crypto). Outside of work, I develop my own apps, such as [Blitz Rugby](https://blitz.rugby), which now has 2,000+ monthly active users.
+
+## Experience
+
+### Founding Engineer · Recall
+
+Jan 2026 – Present · Remote
+
+- **OCR pipeline:** Built a self-hosted server that handles any PDF and processes thousands a week, ~95% cheaper than the cheapest cloud option. Owned research, deployment, monitoring, and alerting. ([Article](https://www.linkedin.com/pulse/how-i-built-support-any-kind-pdf-week-samuel-sendzul-srjvf/))
+- **Mobile rewrite:** Moved the app from a poorly performing React Native wrapped webview to Capacitor. Migrated 17k+ MAU with no interruption, shipped both store releases, and made the app faster to use and easier to develop on.
+- **Platform upgrades:** Owned large platform upgrades from design and development to monitoring and iteration, including: knowledge base search, bulk upload with AI actions, and images as a primary card type with OCR and vision model integrations so users can save and recall more than text.
+
+### Full Stack Engineer · Stitch
+
+Aug 2024 – Dec 2025 · Cape Town, South Africa
+
+- **Shield fraud platform:** Built core components of the realtime fraud prevention platform: rule-based monitoring, merchant-level customisation, and sync/async block-approve decisioning. Shield won Consumer Anti-Fraud Solution of the Year at Absa’s Commercial Payments Summit 2025.
+- **Hosted payment UI:** Researched and designed a server-driven overhaul with a lightweight JS templating engine for entry-level devices and unreliable networks. Cut effective bundle size to near 0KB and hit <200ms p95 LCP.
+- **One click card payments:** Built identity resolution across devices and sessions, then used those insights to persist card preference and ship a one-click card flow with a 2–3% conversion uplift for key merchants.
+- **Merchant Dashboard:** Improved Finance Ops workflows for reconciliation, refunds, and realtime transaction analytics. Focused on reducing friction and improving data reliability for enterprise merchants.
+
+### Full Stack Engineer · CrissCross
+
+Mar 2023 – Jul 2024 · Cape Town, South Africa
+
+- **Pay with Crypto API:** Built the Go payments API behind Stitch’s Pay with Crypto, covering Binance, Luno, VALR, and on-chain transfers plus settlement, reconciliation, and payment management. Still used by major SA betting brands.
+- **Trading and pricing:** Worked on the Go algorithmic trading engine for cross-border liquidity, including position scaling, hedge management, and settlement. Built the pricing engine traders use for quoting and opportunity sourcing.
+- **Trading dashboards:** Built React/Next.js dashboards for traders and enterprise clients to visualise markets, quote and book trades, monitor exposures, and withdraw funds.
+
+### Full Stack Engineer · FiveWest
+
+Jun 2022 – Feb 2023 · Cape Town, South Africa
+
+- **Crypto Payments Gateway:** Designed and built it end to end so African merchants could accept crypto and settle automatically into local currency. Owned architecture, integration flows, and settlement logic.
+- **Sprint lead:** Led engineering sprints for the gateway: set deliverables, made core architecture decisions, and kept reliability, security, and compliance in scope.
+
+### Junior Quantitative Software Developer · Invictus Capital
+
+Mar 2022 – May 2022 · Cape Town, South Africa
+
+- **Trading algorithms:** Designed, implemented, and managed market-neutral crypto strategies in Python on Google Kubernetes Engine. Built backtests so the desk could iterate on new ideas against a realistic live environment.
+- **Move to FiveWest:** When the desk’s trading IP was bought, the team moved across to FiveWest and continued as software developers.
+
+### Machine Learning Engineer · Cape AI
+
+Oct 2021 – Mar 2022 · Cape Town, South Africa
+
+- **On-edge computer vision:** Built parts of the AI system behind Moonshop’s autonomous shopping, including Android on-edge camera work with MoveNet pose estimation and YOLOv5 object detection.
+- **Neo-bank personalisation:** Led an ML project for a US neo-bank: framed the problem, engineered features from raw transactions, and validated and backtested the model. Started as Junior Data Scientist from May 2021.
+
+### Earlier
+
+- **Data Science Intern** · Matogen Applied Insights (2021)
+- **Founder** · Outlines Art Collective (2018–2020)
+- **Workshop Instructor and Private Tutor** · SmartPrep (2020–2021)
+
+## Tool stack
+
+- **Languages:** Go, Python, TypeScript
+- **Product and frontend:** React, Next.js, SvelteKit, Capacitor
+- **Backend and data:** Postgres, FastAPI, gRPC, Supabase
+- **Infrastructure:** Docker, Kubernetes, Cloud Run, Firebase, Fly.io
+- **Instrumentation:** Sentry, PostHog
+- **AI assisted development:** Cursor, Claude Code
+
+## Education
+
+- **BComHons Mathematical Statistics** · Stellenbosch University (2020)
+- **BCom Mathematical Sciences, Financial Risk Management** · Stellenbosch University (2017–2019)
+
+## Awards
+
+Investec Out Of The Ordinary Award · 2017 Young Economist of the Year · Golden Key lifetime member · Capitec and Nedbank quant programmes
