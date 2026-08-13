@@ -22,19 +22,21 @@ const styles = StyleSheet.create({
     lineHeight: 1.35,
     color: '#1a1a1a',
   },
+  header: {
+    flexDirection: 'column',
+    gap: 8,
+    marginBottom: 12,
+  },
   name: {
     fontFamily: 'Helvetica-Bold',
     fontSize: 16,
-    marginBottom: 2,
   },
   tagline: {
     fontSize: 10,
-    marginBottom: 2,
   },
   contact: {
     fontSize: 8,
     color: '#444',
-    marginBottom: 10,
   },
   section: {
     marginTop: 8,
@@ -114,18 +116,20 @@ export function CvDocument({ data }: CvDocumentProps) {
       subject={profile.tagline}
     >
       <Page size="A4" style={styles.page}>
-        <Text style={styles.name}>{profile.name}</Text>
-        <Text style={styles.tagline}>{profile.tagline}</Text>
-        <Text style={styles.contact}>
-          {profile.email} ·{' '}
-          <Link src={profile.github} style={styles.link}>
-            GitHub
-          </Link>{' '}
-          ·{' '}
-          <Link src={profile.linkedin} style={styles.link}>
-            LinkedIn
-          </Link>
-        </Text>
+        <View style={styles.header}>
+          <Text style={styles.name}>{profile.name}</Text>
+          <Text style={styles.tagline}>{profile.tagline}</Text>
+          <Text style={styles.contact}>
+            {profile.email} ·{' '}
+            <Link src={profile.github} style={styles.link}>
+              GitHub
+            </Link>{' '}
+            ·{' '}
+            <Link src={profile.linkedin} style={styles.link}>
+              LinkedIn
+            </Link>
+          </Text>
+        </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>

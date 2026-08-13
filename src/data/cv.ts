@@ -78,7 +78,7 @@ export const cv: CvData = {
     name: 'Samuel Sendzul',
     tagline: 'Product focused software engineer',
     email: 'samuel.sendzul@gmail.com',
-    github: 'https://github.com/Samuel-Sendzul',
+    github: 'https://github.com/Samuel-Sendzul/samuel-sendzul',
     linkedin: 'https://www.linkedin.com/in/samuel-sendzul/',
   },
 
