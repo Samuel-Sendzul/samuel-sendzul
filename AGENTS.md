@@ -5,8 +5,8 @@ Agent-facing brief for the Samuel Sendzul CV site.
 ## Project overview
 
 Single-page React + Vite site. The home page is a redesigned CV for a product
-focused software engineer: intro, selected work, experience, tool stack,
-education. Light/dark theme. Client-side PDF download via `@react-pdf/renderer`.
+focused software engineer: intro, experience, tool stack, education. Light/dark
+theme. Client-side PDF download via `@react-pdf/renderer`.
 
 No router. No Tailwind. No UI library. No path aliases.
 
@@ -33,7 +33,7 @@ src/
   data/cv.ts                   typed content (single source of truth)
   components/
     layout/                    Header, Footer
-    cv/                        Intro, SelectedWork, RoleCard, ToolStack, Education
+    cv/                        Intro, RoleCard, ToolStack, Education
     ui/                        Section, ThemeToggle, DownloadCvButton
   pdf/CvDocument.tsx           A4 print layout for download
 ```
@@ -52,7 +52,7 @@ src/
 
 | Task                                  | Start here                                                      |
 | ------------------------------------- | --------------------------------------------------------------- |
-| Add or edit a role / highlight / tool | `src/data/cv.ts`                                                |
+| Add or edit a role / tool             | `src/data/cv.ts`                                                |
 | Change colours, type, spacing         | `src/index.css`                                                 |
 | Change theme behaviour                | `src/context/ThemeContext.tsx`, no-flash script in `index.html` |
 | Change page layout / breakpoints      | `src/App.module.css`                                            |
@@ -75,4 +75,4 @@ pnpm llm-txt  # Regenerate public/llm.txt from cv data
 - `pnpm lint` and `pnpm build` clean
 - Theme toggle persists across reload; first visit follows system preference
 - Check ~375px, ~768px, ~1280px widths
-- Download CV: selectable text, fits one to two A4 pages
+- Download CV: selectable text, fits one A4 page

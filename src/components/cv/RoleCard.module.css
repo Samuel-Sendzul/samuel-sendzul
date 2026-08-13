@@ -6,7 +6,7 @@
 .role {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding: var(--space-5) 0;
   border-bottom: 1px solid var(--border);
 }
@@ -23,7 +23,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 0.15rem;
 }
 
 .heading {
@@ -37,15 +37,17 @@
 .company {
   font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 .meta {
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
+  line-height: 1.4;
   color: var(--text-muted);
 }
 
 .dates {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.02em;
@@ -55,49 +57,52 @@
 .bullets {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  max-width: var(--measure);
+  gap: var(--space-3);
 }
 
 .bullets li {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding-left: var(--space-2);
-  border-left: 2px solid var(--accent);
+  padding-left: 0.95rem;
+  position: relative;
+}
+
+.bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: var(--text-muted);
+}
+
+.bullet {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-soft);
+  max-width: 42rem;
 }
 
 .lead {
-  font-size: 1rem;
   font-weight: 600;
-  line-height: 1.4;
   color: var(--text);
 }
 
-.detail {
-  font-size: 0.9375rem;
-  line-height: 1.55;
-  color: var(--text-soft);
-}
-
-.detail a {
+.bullet a {
   font-weight: 600;
   text-decoration: none;
 }
 
-.detail a:hover {
+.bullet a:hover {
   text-decoration: underline;
 }
 
 .earlier {
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
   padding-top: var(--space-5);
   border-top: 1px solid var(--border);
 }
 
 .earlierTitle {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -108,13 +113,14 @@
 .earlierList {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
 }
 
 .earlierList li {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
 }
 
 .earlierCompany {
@@ -123,16 +129,26 @@
 }
 
 .earlierMeta {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: var(--text-muted);
 }
 
 @media print {
   .role {
-    padding: var(--space-4) 0;
+    padding: var(--space-3) 0;
+    gap: var(--space-2);
   }
 
   .bullets {
-    gap: var(--space-3);
+    gap: var(--space-1);
+  }
+
+  .bullet {
+    font-size: 0.9375rem;
+    line-height: 1.45;
+  }
+
+  .earlier {
+    padding-top: var(--space-3);
   }
 }

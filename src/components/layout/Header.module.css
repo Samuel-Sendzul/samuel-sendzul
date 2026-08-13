@@ -1,8 +1,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  padding-bottom: var(--space-3);
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
   border-bottom: 1px solid var(--border);
 }
 
@@ -13,7 +13,7 @@
 }
 
 .name {
-  font-size: clamp(2.125rem, 5.5vw, 3.25rem);
+  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -69,11 +69,11 @@
   .meta {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     gap: var(--space-4);
   }
 
   .links {
+    margin-inline-start: auto;
     justify-content: flex-end;
   }
 }

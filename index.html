@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#eef1f4" />
     <meta
       name="description"
-      content="Samuel Sendzul — product focused software engineer. CV and selected work."
+      content="Samuel Sendzul — product focused software engineer. CV."
     />
     <title>Samuel Sendzul</title>
     <script>
@@ -22,13 +22,6 @@
                 ? 'dark'
                 : 'light'
           document.documentElement.dataset.theme = theme
-          var scale = Number(localStorage.getItem('sendzul-text-scale'))
-          if (scale === 1 || scale === 1.0625 || scale === 1.1875) {
-            document.documentElement.style.setProperty(
-              '--text-scale',
-              String(scale),
-            )
-          }
           var meta = document.querySelector('meta[name="theme-color"]')
           if (meta) {
             meta.setAttribute(

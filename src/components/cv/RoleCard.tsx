@@ -47,8 +47,8 @@ export function Experience({ roles, earlier }: ExperienceProps) {
             <ul className={styles.bullets}>
               {role.bullets.map((b) => (
                 <li key={b.lead}>
-                  <p className={styles.lead}>{b.lead}</p>
-                  <p className={styles.detail}>
+                  <p className={styles.bullet}>
+                    <span className={styles.lead}>{b.lead}.</span>{' '}
                     <BulletText
                       text={b.text}
                       href={b.href}

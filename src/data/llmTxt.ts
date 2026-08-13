@@ -1,8 +1,7 @@
-import { cv, type CvData } from './cv'
+import { cv, introToMarkdown, type CvData } from './cv'
 
 export function formatLlmTxt(data: CvData = cv): string {
-  const { profile, intro, highlights, roles, earlier, toolStack, education, awards } =
-    data
+  const { profile, intro, roles, earlier, toolStack, education, awards } = data
 
   const lines: string[] = [
     `# ${profile.name}`,
@@ -15,26 +14,11 @@ export function formatLlmTxt(data: CvData = cv): string {
     '',
     '## About',
     '',
-    ...intro,
+    ...intro.map(introToMarkdown),
     '',
-    '## Selected work',
+    '## Experience',
     '',
   ]
-
-  for (const h of highlights) {
-    lines.push(`### ${h.title}`)
-    lines.push('')
-    lines.push(`${h.metric} - ${h.metricLabel}`)
-    lines.push('')
-    lines.push(h.body)
-    lines.push('')
-    lines.push(`[${h.hrefLabel}](${h.href})`)
-    if (h.iosHref) lines.push(`[iOS](${h.iosHref})`)
-    if (h.androidHref) lines.push(`[Android](${h.androidHref})`)
-    lines.push('')
-  }
-
-  lines.push('## Experience', '')
 
   for (const role of roles) {
     lines.push(`### ${role.title} · ${role.company}`)

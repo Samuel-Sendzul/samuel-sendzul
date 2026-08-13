@@ -5,18 +5,6 @@ export type Bullet = {
   hrefLabel?: string
 }
 
-export type Highlight = {
-  title: string
-  metric: string
-  metricLabel: string
-  body: string
-  href: string
-  hrefLabel: string
-  iosHref?: string
-  androidHref?: string
-  group?: string
-}
-
 export type Role = {
   company: string
   title: string
@@ -56,10 +44,28 @@ export type Profile = {
   linkedin: string
 }
 
+export type IntroLink = {
+  text: string
+  href: string
+}
+
+export type IntroPart = string | IntroLink
+
+export type IntroParagraph = IntroPart[]
+
+export function introToPlainText(parts: IntroPart[]): string {
+  return parts.map((p) => (typeof p === 'string' ? p : p.text)).join('')
+}
+
+export function introToMarkdown(parts: IntroPart[]): string {
+  return parts
+    .map((p) => (typeof p === 'string' ? p : `[${p.text}](${p.href})`))
+    .join('')
+}
+
 export type CvData = {
   profile: Profile
-  intro: string[]
-  highlights: Highlight[]
+  intro: IntroParagraph[]
   roles: Role[]
   earlier: EarlierRole[]
   toolStack: ToolGroup[]
@@ -77,62 +83,23 @@ export const cv: CvData = {
   },
 
   intro: [
-    "Hi, I'm Sam, a software developer working across AI products, fintech, and blockchain. I've built an OCR pipeline that processes thousands of PDFs a week and overhauled a mobile app currently serving 17,000+ monthly users (Recall). I've also worked on scalable payment processing systems, crypto trading algorithms, and a crypto acceptance product (Stitch). Outside of work, I develop my own apps, such as Blitz Rugby, which now has 2,000+ monthly active users."
-  ],
-
-  highlights: [
-    {
-      title: 'Self hosted OCR pipeline',
-      metric: '~95% cheaper',
-      metricLabel: 'than the cheapest cloud option',
-      body: 'Built an OCR server at Recall that handles any PDF and processes thousands a week. I owned technology research, deployment, monitoring, and alerting.',
-      href: 'https://www.linkedin.com/pulse/how-i-built-support-any-kind-pdf-week-samuel-sendzul-srjvf/',
-      hrefLabel: 'Read the write-up',
-    },
-    {
-      title: 'Capacitor mobile rewrite',
-      metric: '17k+ MAU',
-      metricLabel: 'migrated with no interruption',
-      body: 'Rewrote the Recall mobile app from a poorly performing React Native wrapped webview to Capacitor. Shipped both store releases. The app is now faster and easier to develop on.',
-      href: 'https://apps.apple.com/us/app/recall-summarize-save/id6445893722',
-      hrefLabel: 'Download Now',
-      iosHref: 'https://apps.apple.com/us/app/recall-summarize-save/id6445893722',
-      androidHref: 'https://play.google.com/store/apps/details?id=com.recall.wiki',
-    },
-    {
-      title: 'Hosted payment UI overhaul',
-      metric: '<200ms p95 LCP',
-      metricLabel: 'near 0KB effective bundle',
-      body: 'Researched and designed a server-driven hosted payment UI at Stitch with a lightweight JS templating engine. Tuned for entry-level devices and unreliable networks.',
-      href: 'https://stitch.money',
-      hrefLabel: 'Visit Stitch',
-      group: 'stitch',
-    },
-    {
-      title: 'One click card payment flow',
-      metric: '2–3% uplift',
-      metricLabel: 'conversion for key merchants',
-      body: 'Built identity resolution across devices and sessions at Stitch, then used those insights to persist card preference and ship a one click card payment flow.',
-      href: 'https://stitch.money',
-      hrefLabel: 'Visit Stitch',
-      group: 'stitch',
-    },
-    {
-      title: 'Blitz Rugby',
-      metric: '2000+ MAU',
-      metricLabel: 'sole technical founder',
-      body: 'Built Blitz Rugby in my spare time as sole technical founder and product decision maker. Active WhatsApp community and strong reviews.',
-      href: 'https://blitz.rugby/open',
-      hrefLabel: 'Open Blitz Rugby',
-    },
-    {
-      title: 'Pay with Crypto',
-      metric: '3 live merchants',
-      metricLabel: 'Betway, Lottostar, Hollywoodbets',
-      body: 'Built the Go payments API behind Stitch’s Pay with Crypto at CrissCross. Covered settlement, reconciliation, and payment management. Still used by major SA betting brands.',
-      href: 'https://stitch.money/payment-methods/pay-with-crypto',
-      hrefLabel: 'Pay with Crypto',
-    },
+    [
+      "Hi, I'm Sam, a software developer working across AI products, fintech, and blockchain. I've built an ",
+      {
+        text: 'OCR pipeline',
+        href: 'https://www.linkedin.com/pulse/how-i-built-support-any-kind-pdf-week-samuel-sendzul-srjvf/',
+      },
+      ' that processes thousands of PDFs a week and overhauled a ',
+      { text: 'mobile app', href: 'https://www.getrecall.ai' },
+      " currently serving 17,000+ monthly users. I've also worked on scalable payment processing systems, crypto trading algorithms, and a ",
+      {
+        text: 'crypto acceptance product',
+        href: 'https://stitch.money/payment-methods/pay-with-crypto',
+      },
+      '. Outside of work, I develop my own apps, such as ',
+      { text: 'Blitz Rugby', href: 'https://blitz.rugby' },
+      ', which now has 2,000+ monthly active users.',
+    ],
   ],
 
   roles: [
@@ -155,11 +122,7 @@ export const cv: CvData = {
         },
         {
           lead: 'Platform upgrades',
-          text: 'Shipped knowledge base search, bulk upload with AI actions, and images as a primary card type with OCR and vision model integrations so users can save and recall more than text.',
-        },
-        {
-          lead: 'AI native development',
-          text: 'Work with AI coding agents daily and use them to ship production features across the stack.',
+          text: 'Owned large platform upgrades from design and development to monitoring and iteration, including: knowledge base search, bulk upload with AI actions, and images as a primary card type with OCR and vision model integrations so users can save and recall more than text.',
         },
       ],
     },

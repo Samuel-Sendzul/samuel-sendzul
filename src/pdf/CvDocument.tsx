@@ -6,96 +6,86 @@ import {
   Text,
   View,
 } from '@react-pdf/renderer'
-import type { CvData } from '../data/cv'
+import {
+  introToPlainText,
+  type CvData,
+  type IntroPart,
+} from '../data/cv'
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 36,
-    paddingBottom: 40,
-    paddingHorizontal: 40,
+    paddingTop: 28,
+    paddingBottom: 28,
+    paddingHorizontal: 32,
     fontFamily: 'Helvetica',
-    fontSize: 9.5,
-    lineHeight: 1.4,
+    fontSize: 9,
+    lineHeight: 1.35,
     color: '#1a1a1a',
   },
   name: {
     fontFamily: 'Helvetica-Bold',
-    fontSize: 18,
+    fontSize: 16,
     marginBottom: 2,
   },
   tagline: {
-    fontSize: 10.5,
+    fontSize: 10,
     marginBottom: 2,
   },
   contact: {
-    fontSize: 8.5,
+    fontSize: 8,
     color: '#444',
-    marginBottom: 14,
+    marginBottom: 10,
   },
   section: {
-    marginTop: 12,
+    marginTop: 8,
   },
   sectionTitle: {
     fontFamily: 'Helvetica-Bold',
-    fontSize: 9,
-    letterSpacing: 1.2,
+    fontSize: 8.5,
+    letterSpacing: 1.1,
     textTransform: 'uppercase',
     color: '#555',
-    marginBottom: 6,
+    marginBottom: 4,
     borderBottomWidth: 1,
     borderBottomColor: '#ddd',
-    paddingBottom: 3,
+    paddingBottom: 2,
   },
   intro: {
-    marginBottom: 4,
-    maxWidth: 460,
-  },
-  highlight: {
-    marginBottom: 6,
-  },
-  highlightMetric: {
-    fontFamily: 'Helvetica-Bold',
-    fontSize: 11,
-    color: '#0e7c66',
-  },
-  highlightTitle: {
-    fontFamily: 'Helvetica-Bold',
-    fontSize: 9.5,
-    marginTop: 1,
+    marginBottom: 2,
   },
   role: {
-    marginBottom: 8,
+    marginBottom: 6,
   },
   roleHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 2,
+    marginBottom: 1,
   },
   company: {
     fontFamily: 'Helvetica-Bold',
-    fontSize: 10,
+    fontSize: 9.5,
   },
   dates: {
-    fontSize: 8.5,
+    fontSize: 8,
     color: '#555',
   },
   title: {
-    fontSize: 9,
-    marginBottom: 3,
+    fontSize: 8.5,
+    marginBottom: 2,
   },
   bullet: {
     marginLeft: 8,
-    marginBottom: 2,
+    marginBottom: 1.5,
   },
   bulletLead: {
     fontFamily: 'Helvetica-Bold',
   },
   toolGroup: {
-    marginBottom: 3,
+    marginBottom: 2,
   },
   toolLabel: {
     fontFamily: 'Helvetica-Bold',
-    fontSize: 8.5,
+    fontSize: 8,
   },
   link: {
     color: '#0e7c66',
@@ -103,10 +93,10 @@ const styles = StyleSheet.create({
   },
   muted: {
     color: '#555',
-    fontSize: 8.5,
+    fontSize: 8,
   },
   earlier: {
-    marginTop: 4,
+    marginTop: 2,
   },
 })
 
@@ -115,8 +105,7 @@ type CvDocumentProps = {
 }
 
 export function CvDocument({ data }: CvDocumentProps) {
-  const { profile, intro, highlights, roles, earlier, toolStack, education, awards } =
-    data
+  const { profile, intro, roles, earlier, toolStack, education, awards } = data
 
   return (
     <Document
@@ -140,26 +129,18 @@ export function CvDocument({ data }: CvDocumentProps) {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
-          {intro.map((p) => (
-            <Text key={p} style={styles.intro}>
-              {p}
+          {intro.map((parts) => (
+            <Text key={introToPlainText(parts)} style={styles.intro}>
+              {parts.map((part: IntroPart, i) =>
+                typeof part === 'string' ? (
+                  <Text key={`${i}-${part.slice(0, 24)}`}>{part}</Text>
+                ) : (
+                  <Link key={part.href} src={part.href} style={styles.link}>
+                    {part.text}
+                  </Link>
+                ),
+              )}
             </Text>
-          ))}
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Selected work</Text>
-          {highlights.map((h) => (
-            <View key={h.title} style={styles.highlight} wrap={false}>
-              <Text style={styles.highlightMetric}>
-                {h.metric} · {h.metricLabel}
-              </Text>
-              <Text style={styles.highlightTitle}>{h.title}</Text>
-              <Text>{h.body}</Text>
-              <Link src={h.href} style={styles.link}>
-                {h.hrefLabel}
-              </Link>
-            </View>
           ))}
         </View>
 
@@ -231,7 +212,7 @@ export function CvDocument({ data }: CvDocumentProps) {
               {d.school} ({d.period})
             </Text>
           ))}
-          <Text style={[styles.muted, { marginTop: 4 }]}>{awards}</Text>
+          <Text style={[styles.muted, { marginTop: 3 }]}>{awards}</Text>
         </View>
       </Page>
     </Document>
