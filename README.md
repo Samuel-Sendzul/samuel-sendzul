@@ -9,8 +9,12 @@ I built this as a live site instead of only a static PDF for a few reasons:
 
 - **Faster iteration.** I can edit in a modern coding editor instead of a PDF
   editor or design tool.
+- **Version history.** Git keeps every previous version, so I can always go
+  back to an earlier site.
 - **Always up to date.** Even if I shared the link months ago, a recruiter who
   reopens it still sees the latest version.
+- **Easy feedback.** Anyone can open the site anywhere, anytime. I do not have
+  to send a PDF first.
 - **Discoverable.** The page can be indexed by Google, so searches for me are
   richer.
 - **Better experience.** Viewer preferences are respected (light/dark theme,
