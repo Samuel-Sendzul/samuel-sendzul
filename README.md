@@ -3,6 +3,22 @@
 Personal CV site: a product-focused software engineer homepage with light/dark
 theme and a client-generated PDF download.
 
+## Why a website, not only a PDF
+
+I built this as a live site instead of only a static PDF for a few reasons:
+
+- **Faster iteration.** I can edit in a modern coding editor instead of a PDF
+  editor or design tool.
+- **Always up to date.** Even if I shared the link months ago, a recruiter who
+  reopens it still sees the latest version.
+- **Discoverable.** The page can be indexed by Google, so searches for me are
+  richer.
+- **Better experience.** Viewer preferences are respected (light/dark theme,
+  font size and accessibility). The page can also be translated instantly with
+  Google Translate if English is not preferred.
+
+A PDF download is still available for ATS systems and offline sharing.
+
 ## Stack
 
 - React 19 + Vite 8 + TypeScript
